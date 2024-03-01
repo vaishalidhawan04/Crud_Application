@@ -1,11 +1,12 @@
 const express = require('express');
-const User = require('../models/Users');
+//const User = require('../models/Users');
+const User = require('../models/Users2');
 const router = express.Router();
 const multer = require('multer');
 //image upload
 var storage = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, './public/uploads');
+        cb(null, './uploads');
     },
     filename: function(req, file, cb){
         cb(null, file.fieldname+"_"+Date.now()+"_"+file.originalname);
